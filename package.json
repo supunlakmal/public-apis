@@ -1,0 +1,22 @@
+{
+  "name": "@supunlakmal/public-apis",
+  "version": "1.0.0",
+
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write .",
+    "p": "npm publish --access public"
+  },  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "@supunlakmal/public-apis",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/supunlakmal/public-apis"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
