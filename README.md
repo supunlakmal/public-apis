@@ -7,7 +7,7 @@ This is a React package that allows you to easily search and retrieve a list of 
 You can install this package using npm:
 ```
 bash
-npm install your-package-name
+npm install @supunlakmal/public-apis
 ```
 *(Replace `your-package-name` with the actual name you will use when publishing)*
 

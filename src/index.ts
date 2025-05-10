@@ -50,3 +50,34 @@ export function getApisByCategory(category: string): Api[] {
   // If the category is not found or `apiData` was falsy, return an empty array.
   return [];
 }
+
+/**
+ * Searches for APIs based on a query string in their name or description.
+ *
+ * @param query The search query string.
+ * @returns An array of Api objects that match the query.
+ */
+export function searchApis(query: string): Api[] {
+  const matchingApis: Api[] = [];
+
+  if (!apiData || typeof apiData !== 'object') {
+    return []; // Return empty array if data is not available or not in expected format
+  }
+
+  const lowerCaseQuery = query.toLowerCase();
+
+  for (const category in apiData) {
+    if (Object.prototype.hasOwnProperty.call(apiData, category)) {
+      const apisInCategory = (apiData as any)[category] as Api[]; // Cast to any for easier access, then to Api[]
+      if (Array.isArray(apisInCategory)) {
+        for (const api of apisInCategory) {
+          if (api.name.toLowerCase().includes(lowerCaseQuery) || api.description.toLowerCase().includes(lowerCaseQuery)) {
+            matchingApis.push(api);
+          }
+        }
+      }
+    }
+  }
+
+  return matchingApis;
+}
