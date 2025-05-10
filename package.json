@@ -1,6 +1,7 @@
 {
   "name": "@supunlakmal/public-apis",
-  "version": "1.0.0",
+  "version": "0.0.1",
+  "author": "supunlakmal",
 
   "scripts": {
     "build": "tsc",
@@ -8,13 +9,15 @@
     "p": "npm publish --access public"
   },  "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
-  "keywords": [],
-  "author": "",
   "license": "ISC",
   "description": "@supunlakmal/public-apis",
   "repository": {
     "type": "git",
     "url": "https://github.com/supunlakmal/public-apis"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/supunlakmal"
   },
   "devDependencies": {
     "typescript": "^5.8.3"
