@@ -13,7 +13,7 @@ npm install @supunlakmal/public-apis
 
 ## Usage
 
-The package exports a single function, `getApisByCategory`, which takes a category name as a string and returns an array of API objects for that category.
+The package exports two functions: `getApisByCategory` and `getAllApis`.
 ```
 javascript
 import { getApisByCategory } from 'your-package-name';
