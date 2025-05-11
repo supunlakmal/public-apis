@@ -81,3 +81,26 @@ export function searchApis(query: string): Api[] {
 
   return matchingApis;
 }
+
+/**
+ * Returns all API data as a flat array of Api objects, regardless of category.
+ *
+ * @returns An array of all Api objects or an empty array if data is not available.
+ */
+export function getAllApis(): Api[] {
+  const allApis: Api[] = [];
+
+  if (!apiData || typeof apiData !== 'object') {
+    return []; // Return empty array if data is not available or not in expected format
+  }
+
+  for (const category in apiData) {
+    if (Object.prototype.hasOwnProperty.call(apiData, category)) {
+      const apisInCategory = (apiData as any)[category] as Api[]; // Cast to any for easier access, then to Api[]
+      if (Array.isArray(apisInCategory)) {
+        allApis.push(...apisInCategory); // Use spread operator to flatten the arrays
+      }
+    }
+  }
+  return allApis;
+}
